@@ -24,7 +24,14 @@ type Novel struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty"`
 	Name          string             `json:"name" bson:"name"`
 	LatestChapter string             `json:"latestChapter" bson:"latestChapter"`
-	ChapterURL    string             `json:"chapterURL" bson:"chapterURL`
+	ChapterURL    string             `json:"chapterURL" bson:"chapterURL"`
+}
+
+// ReturnNewNovelStructure creates new Struct
+func ReturnNewNovelStructure() Novel {
+	var novelStruct *Novel
+	novelStruct = new(Novel)
+	return *novelStruct
 }
 
 // Extracts the body of the HTML page from an URL
@@ -165,6 +172,10 @@ func exportAsJSON(URLAsString string) []byte {
 	return j
 
 }
+
+// save json to mongodb, aka add a new novel to the database
+
+// get all the novels from mongodb
 
 // TestPrint prints stuff
 func TestPrint() string {
