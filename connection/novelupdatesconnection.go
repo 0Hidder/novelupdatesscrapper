@@ -8,6 +8,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 const (
@@ -19,9 +21,10 @@ const (
 
 // Novel is a struct representing the novel we get from the URL from NovelUpdates
 type Novel struct {
-	Name          string `json:"name"`
-	LatestChapter string `json:"latestChapter"`
-	ChapterURL    string `json:"chapterURL"`
+	ID            primitive.ObjectID `bson:"_id,omitempty"`
+	Name          string             `json:"name" bson:"name"`
+	LatestChapter string             `json:"latestChapter" bson:"latestChapter"`
+	ChapterURL    string             `json:"chapterURL" bson:"chapterURL`
 }
 
 // Extracts the body of the HTML page from an URL
