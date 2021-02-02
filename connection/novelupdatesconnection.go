@@ -162,3 +162,8 @@ func exportAsJSON(URLAsString string) []byte {
 	return j
 
 }
+
+// TestPrint prints stuff
+func TestPrint() string {
+	return "TEST FROM CONNECTION PACKAGE"
+}
