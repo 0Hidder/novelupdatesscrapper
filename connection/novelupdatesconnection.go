@@ -25,6 +25,7 @@ type Novel struct {
 	Name          string             `json:"name" bson:"name"`
 	LatestChapter string             `json:"latestChapter" bson:"latestChapter"`
 	ChapterURL    string             `json:"chapterURL" bson:"chapterURL"`
+	NovelURL      string             `json:"novelURL" bson:"novelURL"`
 }
 
 // ReturnNewNovelStructure creates new Struct
@@ -32,6 +33,12 @@ func ReturnNewNovelStructure() Novel {
 	var novelStruct *Novel
 	novelStruct = new(Novel)
 	return *novelStruct
+}
+
+//ReturnNewNovelStructureArray return an array of Novels
+func ReturnNewNovelStructureArray() []Novel {
+	var novels []Novel
+	return novels
 }
 
 // Extracts the body of the HTML page from an URL
