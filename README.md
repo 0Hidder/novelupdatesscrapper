@@ -1,3 +1,2 @@
-# novelupdatesscrapperv1
-Gets the latest chapter from Novel Updates
+# novelupdatesscrapper
 Currently on hold, as I have been busy with work.
